@@ -28,7 +28,7 @@ k12=23;k23=23;k34=23;k2=0;k4=2.5;
 k12=10;k23=10;k34=10;k2=2;
 k4 = 3;
 
-NivRuido = 1;              % Multiplicador
+%NivRuido = 5;              % Multiplicador
 vrm  = 0.001*NivRuido;      % ruido de medida
 vrh1 = 0.001*NivRuido;      % ruido em h1
 vrh2 = 0.0005*NivRuido;     % ruido em h2

@@ -10,9 +10,8 @@ ent = idout.signals.values(:,1);
 sysL = lsim(g, idout.signals.values(:,1),vet);
 data_id = iddata(inp(1:floor(tam*0.8)),out(1:floor(tam*0.8)), 1); %falores de entrada e saída
 data_val = iddata(inp(floor(tam*0.8):end),out(floor(tam*0.8):end), 1);
-model_lin = iddata(sysL,ent, 1);
+model_lin = iddata(sysL(floor(tam1*0.7):end),ent(floor(tam1*0.7):end), 1);
 % Tirar a tendencia 
-%data_id = model_lin;
 data_id = detrend(data_id);
 data_val = detrend(data_val);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,4 +43,4 @@ model_ss = ssest(data_id,4,'Form','canonical');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Lin_Analitica(PO,k12,k23,k34,k2,k4);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-compare(model_lin,model_tf, model_arx, model_armax, model_eo, model_bj, model_ss);
+compare(data_val,model_tf, model_arx, model_armax, model_eo, model_bj, model_ss);
