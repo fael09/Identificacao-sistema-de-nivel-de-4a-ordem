@@ -52,7 +52,9 @@ s1=p1*p2*p3+p1*p2*p4+p1*p3*p4+p2*p3*p4-a1*a1*(p3+p4)-a2*a2*(p1+p4)-a3*a3*(p1+p2)
 s2=p1*p2+p1*p3+p1*p4+p2*p3+p2*p4+p3*p4-a1*a1-a2*a2-a3*a3;
 s3=p1+p2+p3+p4;
 
-g=tf(a1*a2*a3/A1,[1 s3 s2 s1 s0])
-r=roots([1 s3 s2 s1 s0])
-analitico='Constantes de tempo',-1./r
-str='Relação entre polo mais rápido/lento', min(r)/max(r)
+g=tf(a1*a2*a3/A1,[1 s3 s2 s1 s0]);
+r=roots([1 s3 s2 s1 s0]);
+analitico='Constantes de tempo';
+-1./r;
+str='Relação entre polo mais rápido/lento';
+min(r)/max(r);
